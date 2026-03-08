@@ -1,0 +1,98 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "9fc1f2ed-b5ac-4f17-8e76-c6d76afcfc86",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "messages": {
+                        "title": "Query",
+                        "type": "string",
+                        "description": "Free-text query for the web research agent"
+                    }
+                },
+                "required": [
+                    "messages"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "title": "Result",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "result"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": null
+                    },
+                    {
+                        "id": "firecrawl_agent",
+                        "name": "firecrawl_agent",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": null
+                    },
+                    {
+                        "id": "firecrawl_agent_tools",
+                        "name": "tools",
+                        "type": "tool",
+                        "subgraph": null,
+                        "metadata": {
+                            "tool_names": [
+                                "firecrawl_search",
+                                "firecrawl_scrape",
+                                "firecrawl_crawl",
+                                "firecrawl_extract"
+                            ],
+                            "tool_count": 4
+                        }
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": null
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "firecrawl_agent",
+                        "target": "firecrawl_agent_tools",
+                        "label": null
+                    },
+                    {
+                        "source": "firecrawl_agent_tools",
+                        "target": "firecrawl_agent",
+                        "label": null
+                    },
+                    {
+                        "source": "__start__",
+                        "target": "firecrawl_agent",
+                        "label": "input"
+                    },
+                    {
+                        "source": "firecrawl_agent",
+                        "target": "__end__",
+                        "label": "output"
+                    }
+                ]
+            }
+        }
+    ]
+}

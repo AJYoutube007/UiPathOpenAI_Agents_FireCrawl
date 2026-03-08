@@ -1,0 +1,9 @@
+flowchart TB
+  __start__(__start__)
+  firecrawl_agent(firecrawl_agent)
+  firecrawl_agent_tools(tools)
+  __end__(__end__)
+  firecrawl_agent --> firecrawl_agent_tools
+  firecrawl_agent_tools --> firecrawl_agent
+  __start__ --> |input|firecrawl_agent
+  firecrawl_agent --> |output|__end__

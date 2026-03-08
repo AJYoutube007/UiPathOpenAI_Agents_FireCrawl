@@ -1,0 +1,14 @@
+
+--- Authentication Error Log 2026-02-27 14:48:52 ---
+[
+  {
+    "timestamp": "2026-02-27T09:18:52.136Z",
+    "message": "Authentication started",
+    "params": {
+      "code": "45cb5246-d95d-4166-a666-4baf9686c059.42751A0CA06466F719E5719C24B8FDB3F04DC77622853BA60C4C53223A2789F0",
+      "scope": "offline_access ProcessMining OrchestratorApiUserAccess StudioWebBackend IdentityServerApi ConnectionService DataService DocumentUnderstanding Du.Digitization.Api Du.Classification.Api Du.Extraction.Api Du.Validation.Api EnterpriseContextService Directory JamJamApi LLMGateway LLMOps OMS RCS.FolderAuthorization TM.Projects TM.TestCases TM.Requirements TM.TestSets AutomationSolutions AT.TrackOperations",
+      "state": "N6-xkUhlPh1_aMk6eAGFKFpv-fD00F9HF478MGHlWHQ",
+      "iss": "https://cloud.uipath.com/identity_"
+    }
+  }
+]
